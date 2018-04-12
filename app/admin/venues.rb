@@ -1,4 +1,6 @@
 ActiveAdmin.register Venue do
+
+ permit_params :dishesyoulove, :populardishes, :neighborhood, :dishes_id, :user_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
