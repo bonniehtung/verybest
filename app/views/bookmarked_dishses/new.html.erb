@@ -24,7 +24,7 @@
           Venues
         </label>
 
-        <input type="text" id="venues_id" name="venues_id" placeholder="Venues" class="form-control" value="<%= @bookmarked_dishse.venues_id %>">
+        <%= select_tag(:venues_id, options_from_collection_for_select(Venue.all, :id, :dishesyoulove, @bookmarked_dishse.venues_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for users_id -->
