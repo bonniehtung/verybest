@@ -1,6 +1,8 @@
 class Dish < ApplicationRecord
   # Direct associations
 
+  belongs_to :user
+
   has_many   :venues,
              :foreign_key => "dishes_id",
              :dependent => :destroy
