@@ -1,0 +1,73 @@
+<!-- Validation failure messages -->
+<% if @venue.errors.any? %>
+  <% @venue.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Venue</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_venue" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for dishesyoulove -->
+      <div class="form-group">
+        <label for="dishesyoulove" class="control-label">
+          Dishesyoulove
+        </label>
+
+        <input type="text" id="dishesyoulove" name="dishesyoulove" placeholder="Dishesyoulove" class="form-control" value="<%= @venue.dishesyoulove %>">
+      </div>
+
+      <!-- Label and input for populardishes -->
+      <div class="form-group">
+        <label for="populardishes" class="control-label">
+          Populardishes
+        </label>
+
+        <input type="text" id="populardishes" name="populardishes" placeholder="Populardishes" class="form-control" value="<%= @venue.populardishes %>">
+      </div>
+
+      <!-- Label and input for neighborhood -->
+      <div class="form-group">
+        <label for="neighborhood" class="control-label">
+          Neighborhood
+        </label>
+
+        <input type="text" id="neighborhood" name="neighborhood" placeholder="Neighborhood" class="form-control" value="<%= @venue.neighborhood %>">
+      </div>
+
+      <!-- Label and input for dishes_id -->
+      <div class="form-group">
+        <label for="dishes_id" class="control-label">
+          Dishes
+        </label>
+
+        <input type="text" id="dishes_id" name="dishes_id" placeholder="Dishes" class="form-control" value="<%= @venue.dishes_id %>">
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @venue.user_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Venue
+      </button>
+      or
+      <a href="/venues">Cancel</a>
+    </form>
+  </div>
+</div>
