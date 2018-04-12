@@ -1,6 +1,9 @@
 class Dish < ApplicationRecord
   # Direct associations
 
+  belongs_to :bookmarked_dishes,
+             :class_name => "BookmarkedDishse"
+
   belongs_to :user
 
   has_many   :venues,
