@@ -22,8 +22,20 @@
         <td><%= venue.dishesyoulove %></td>
         <td><%= venue.populardishes %></td>
         <td><%= venue.neighborhood %></td>
-        <td><%= venue.dishes.time_of_day %></td>
-        <td><%= venue.user.created_at %></td>
+        <td>
+          <% if venue.dishes.present? %>
+            <a href="/dishes/<%= venue.dishes.id %>">
+              <%= venue.dishes.time_of_day %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if venue.user.present? %>
+            <a href="/users/<%= venue.user.id %>">
+              <%= venue.user.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/venues/<%= venue.id %>" class="btn btn-primary">Show</a>
           <a href="/venues/<%= venue.id %>/edit" class="btn btn-warning">Edit</a>

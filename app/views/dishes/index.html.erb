@@ -24,8 +24,20 @@
         <td><%= dish.cuisine %></td>
         <td><%= dish.populardishes %></td>
         <td><%= dish.venues_id %></td>
-        <td><%= dish.user.created_at %></td>
-        <td><%= dish.bookmarked_dishes.venues_id %></td>
+        <td>
+          <% if dish.user.present? %>
+            <a href="/users/<%= dish.user.id %>">
+              <%= dish.user.created_at %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if dish.bookmarked_dishes.present? %>
+            <a href="/bookmarked_dishses/<%= dish.bookmarked_dishes.id %>">
+              <%= dish.bookmarked_dishes.venues_id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/dishes/<%= dish.id %>" class="btn btn-primary">Show</a>
           <a href="/dishes/<%= dish.id %>/edit" class="btn btn-warning">Edit</a>

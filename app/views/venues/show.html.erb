@@ -15,10 +15,22 @@
       <dd><%= @venue.neighborhood %></dd>
 
       <dt>Dishes</dt>
-      <dd><%= @venue.dishes_id %></dd>
+      <dd>
+        <% if @venue.dishes.present? %>
+          <a href="/dishes/<%= @venue.dishes_id %>">
+            <%= @venue.dishes.time_of_day %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>User</dt>
-      <dd><%= @venue.user_id %></dd>
+      <dd>
+        <% if @venue.user.present? %>
+          <a href="/users/<%= @venue.user_id %>">
+            <%= @venue.user.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

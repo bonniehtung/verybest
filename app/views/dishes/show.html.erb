@@ -18,10 +18,22 @@
       <dd><%= @dish.venues_id %></dd>
 
       <dt>User</dt>
-      <dd><%= @dish.user_id %></dd>
+      <dd>
+        <% if @dish.user.present? %>
+          <a href="/users/<%= @dish.user_id %>">
+            <%= @dish.user.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Bookmarked dishes</dt>
-      <dd><%= @dish.bookmarked_dishes_id %></dd>
+      <dd>
+        <% if @dish.bookmarked_dishes.present? %>
+          <a href="/bookmarked_dishses/<%= @dish.bookmarked_dishes_id %>">
+            <%= @dish.bookmarked_dishes.venues_id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
