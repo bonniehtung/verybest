@@ -35,3 +35,34 @@
     </div>
   </div>
 </div>
+
+<!-- A Venue has many bookmarkeds -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Bookmarkeds
+      </li>
+
+      <% @venue.bookmarkeds.each do |bookmarked_dishse| %>
+        <li class="list-group-item">
+          <a href="/bookmarked_dishses/<%= bookmarked_dishse.id %>">
+            <%= bookmarked_dishse.venues_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/bookmarked_dishses/<%= bookmarked_dishse.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/bookmarked_dishses/<%= bookmarked_dishse.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_bookmarked_dishse/<%= bookmarked_dishse.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
