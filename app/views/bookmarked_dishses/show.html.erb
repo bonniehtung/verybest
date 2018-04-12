@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h3>Bookmarked Dishse #<%= @bookmarked_dishse.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Venues</dt>
+      <dd><%= @bookmarked_dishse.venues_id %></dd>
+
+      <dt>Users</dt>
+      <dd><%= @bookmarked_dishse.users_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/bookmarked_dishses" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/bookmarked_dishses/<%= @bookmarked_dishse.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_bookmarked_dishse/<%= @bookmarked_dishse.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
