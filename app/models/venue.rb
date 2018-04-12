@@ -1,6 +1,8 @@
 class Venue < ApplicationRecord
   # Direct associations
 
+  belongs_to :user
+
   has_many   :bookmarkeds,
              :class_name => "BookmarkedDishse",
              :foreign_key => "venues_id",
