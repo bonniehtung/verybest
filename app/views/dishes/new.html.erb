@@ -69,7 +69,7 @@
           Bookmarked dishes
         </label>
 
-        <input type="text" id="bookmarked_dishes_id" name="bookmarked_dishes_id" placeholder="Bookmarked dishes" class="form-control" value="<%= @dish.bookmarked_dishes_id %>">
+        <%= select_tag(:bookmarked_dishes_id, options_from_collection_for_select(BookmarkedDishse.all, :id, :venues_id, @dish.bookmarked_dishes_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">
