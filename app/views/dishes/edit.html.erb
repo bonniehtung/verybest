@@ -1,0 +1,82 @@
+<!-- Validation failure messages -->
+<% if @dish.errors.any? %>
+  <% @dish.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Dish #<%= @dish.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_dish/<%= @dish.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for time_of_day -->
+      <div class="form-group">
+        <label for="time_of_day" class="control-label">
+          Time of day
+        </label>
+
+        <input type="text" id="time_of_day" name="time_of_day" placeholder="Time of day" class="form-control" value="<%= @dish.time_of_day %>">
+      </div>
+
+      <!-- Label and input for cuisine -->
+      <div class="form-group">
+        <label for="cuisine" class="control-label">
+          Cuisine
+        </label>
+
+        <input type="text" id="cuisine" name="cuisine" placeholder="Cuisine" class="form-control" value="<%= @dish.cuisine %>">
+      </div>
+
+      <!-- Label and input for populardishes -->
+      <div class="form-group">
+        <label for="populardishes" class="control-label">
+          Populardishes
+        </label>
+
+        <input type="text" id="populardishes" name="populardishes" placeholder="Populardishes" class="form-control" value="<%= @dish.populardishes %>">
+      </div>
+
+      <!-- Label and input for venues_id -->
+      <div class="form-group">
+        <label for="venues_id" class="control-label">
+          Venues
+        </label>
+
+        <input type="text" id="venues_id" name="venues_id" placeholder="Venues" class="form-control" value="<%= @dish.venues_id %>">
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @dish.user_id %>">
+      </div>
+
+      <!-- Label and input for bookmarked_dishes_id -->
+      <div class="form-group">
+        <label for="bookmarked_dishes_id" class="control-label">
+          Bookmarked dishes
+        </label>
+
+        <input type="text" id="bookmarked_dishes_id" name="bookmarked_dishes_id" placeholder="Bookmarked dishes" class="form-control" value="<%= @dish.bookmarked_dishes_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Dish
+      </button>
+      or
+      <a href="/dishes/<%= @dish.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
