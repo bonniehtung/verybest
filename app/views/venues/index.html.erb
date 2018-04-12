@@ -23,7 +23,7 @@
         <td><%= venue.populardishes %></td>
         <td><%= venue.neighborhood %></td>
         <td><%= venue.dishes.time_of_day %></td>
-        <td><%= venue.user_id %></td>
+        <td><%= venue.user.created_at %></td>
         <td>
           <a href="/venues/<%= venue.id %>" class="btn btn-primary">Show</a>
           <a href="/venues/<%= venue.id %>/edit" class="btn btn-warning">Edit</a>
