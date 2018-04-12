@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "dishes#index"
   # Routes for the Bookmarked_dishse resource:
   # CREATE
   get "/bookmarked_dishses/new", :controller => "bookmarked_dishses", :action => "new"
